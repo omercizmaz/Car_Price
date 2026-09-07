@@ -15,8 +15,8 @@ Instead of relying on a single algorithm, this pipeline tests and compares multi
     *   Transformed the `Year` column into a regression-friendly `Age` feature.
     *   Handled outliers using the IQR method.
     *   Applied the **Box-Cox transformation** to the target variable (`Price`) to stabilize variance.
-3.  **Hyperparameter Tuning:** Applied optimization techniques (e.g., RandomizedSearchCV / GridSearchCV) to push the algorithms to their limits. 
-4.  **True Evaluation:** All final metrics (MAE, RMSE, $R^2$) were calculated by reversing the predictions to the original price scale (`inv_boxcox`), revealing the true generalization performance of the models and exposing "optimization illusions."
+3.  **Hyperparameter Tuning:** Applied optimization techniques to push the algorithms to their limits. 
+4.  **True Evaluation:** All final metrics (MAE, RMSE, R2) were calculated by reversing the predictions to the original price scale (`inv_boxcox`), revealing the true generalization performance of the models and exposing "optimization illusions."
 
 ### Conclusion & Final Model
 While complex ensemble models like **XGBoost** showed exceptionally high $R^2$ scores on the transformed data, translating those predictions back to the original scale revealed overfitting tendencies. 
@@ -41,7 +41,7 @@ Sadece tek bir modele bağlı kalmak yerine, bu çalışmada farklı yaklaşıml
     *   `Year` (Yıl) değişkeni, regresyona daha uygun olan `Age` (Yaş) değişkenine dönüştürüldü.
     *   Aykırı değerler IQR yöntemi ile temizlendi.
     *   Bağımlı değişkenin varyansını dengelemek için **Box-Cox dönüşümü** uygulandı.
-3.  **Hiperparametre Optimizasyonu:** Algoritmaların sınırlarını zorlamak ve potansiyellerini görmek için optimizasyon teknikleri (RandomizedSearchCV / GridSearchCV) kullanıldı.
+3.  **Hiperparametre Optimizasyonu:** Algoritmaların sınırlarını zorlamak ve potansiyellerini görmek için optimizasyon teknikleri kullanıldı.
 4.  **Gerçekçi Değerlendirme:** Modellerin asıl performansını görmek ve "karmaşıklık/ezberleme yanılsamasını" ortadan kaldırmak için tüm nihai metrikler (MAE, RMSE, R2), `inv_boxcox` ile orijinal fiyat ölçeğine geri dönülerek hesaplandı.
 
 ### Sonuç ve Final Modeli
